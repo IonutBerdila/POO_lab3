@@ -1,20 +1,35 @@
-// Mostenire ierarhica - clasa Motorcycle care extinde clasa Vehicle
 class Motorcycle extends Vehicle {
-    // Constructor
-    public Motorcycle(String brand, String model, String color) {
-        super(brand, model, color);
+    public Motorcycle(String brand, String model, String culoare, int an) {
+        super(brand, model, culoare, an);
     }
 
+    public Motorcycle(String brand, String model, int an) {
+        super(brand, model, "Necunoscut", an);
+    }
+
+    @Override
     void start() {
-        System.out.println("Motorul motocicletei este pornit");
+        System.out.println("Motorul motocicletei a fost pornit");
+    }
+
+    @Override
+    void stop() {
+        System.out.println("Motorul motocicletei a fost oprit");
     }
 
     void ride() {
         System.out.println("Motocicleta este pe drum");
     }
 
+    public void setSomething(int value) {
+    }
+
+    public int getSomething() {
+        return 0;
+    }
+
     @Override
     public String toString() {
-        return "Motorcycle: " + getBrand() + " " + getModel() + ", Color: " + getColor();
+        return "Motocicletă: " + getBrand() + " " + getModel() + ", Culoare: " + getCuloare() + ", An: " + getAn();
     }
 }

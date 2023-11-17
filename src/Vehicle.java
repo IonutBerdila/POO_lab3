@@ -1,14 +1,23 @@
-// Abstractizarea - clasa abstracta pentru vehicul
 abstract class Vehicle {
     private String brand;
     private String model;
-    private String color; // Atribut nou
+    private String culoare;
+    private int an;
 
-    public Vehicle(String brand, String model, String color) {
+    public Vehicle() {
+        this.brand = "Necunoscut";
+        this.model = "Necunoscut";
+        this.culoare = "Necunoscut";
+        this.an = 0;
+    }
+
+    public Vehicle(String brand, String model, String culoare, int an) {
         this.brand = brand;
         this.model = model;
-        this.color = color;
+        this.culoare = culoare;
+        this.an = an;
     }
+
 
     public String getBrand() {
         return brand;
@@ -26,18 +35,28 @@ abstract class Vehicle {
         this.model = model;
     }
 
-    public String getColor() {
-        return color;
+    public String getCuloare() {
+        return culoare;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public int getAn() {
+        return an;
+    }
+
+    public void setAn(int an) {
+        this.an = an;
     }
 
     abstract void start();
 
+    abstract void stop();
+
     @Override
     public String toString() {
-        return "Vehicle: " + getBrand() + " " + getModel() + ", Color: " + getColor();
+        return "Vehicle: " + getBrand() + " " + getModel() + ", Culoare: " + getCuloare() + ", An: " + getAn();
     }
 }
