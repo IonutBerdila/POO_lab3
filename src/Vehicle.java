@@ -1,15 +1,8 @@
 abstract class Vehicle {
-    private String brand;
-    private String model;
-    private String culoare;
-    private int an;
-
-    public Vehicle() {
-        this.brand = "Necunoscut";
-        this.model = "Necunoscut";
-        this.culoare = "Necunoscut";
-        this.an = 0;
-    }
+    private final String brand;
+    private final String model;
+    private final String culoare;
+    private final int an;
 
     public Vehicle(String brand, String model, String culoare, int an) {
         this.brand = brand;
@@ -23,32 +16,16 @@ abstract class Vehicle {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getCuloare() {
         return culoare;
     }
 
-    public void setCuloare(String culoare) {
-        this.culoare = culoare;
-    }
-
     public int getAn() {
         return an;
-    }
-
-    public void setAn(int an) {
-        this.an = an;
     }
 
     abstract void start();
